@@ -45,7 +45,8 @@ class CollectionTest extends PHPUnit_Framework_TestCase
         $this->assertEquals('baz', $this->collection[2]);
     }
 
-    public function test_it_can_be_returned_as_an_array() {
+    public function test_it_can_be_returned_as_an_array()
+    {
         $this->assertEquals(['foo', 'bar',  'baz'], $this->collection->all());
     }
 
@@ -104,7 +105,7 @@ class CollectionTest extends PHPUnit_Framework_TestCase
         $this->assertEquals([
             'desk' => ['quantity' => 2],
             'chair' => ['quantity' => 4]
-        ], $inStockProducts ->all());
+        ], $inStockProducts->all());
     }
 
     public function test_it_is_reducible()
@@ -142,6 +143,7 @@ class CollectionTest extends PHPUnit_Framework_TestCase
         $this->assertEquals([1, 3], $collection->append(3)->all());
         $this->assertEquals([1, 3, 3, 7], $collection->append(3, 7)->all());
     }
+
     public function test_it_is_prependable()
     {
         $collection = Collection::make([7]);

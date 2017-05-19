@@ -6,9 +6,7 @@ use ArrayAccess;
 use Closure;
 use Countable;
 use IteratorAggregate;
-
 use Collection\Interfaces\Arrayable;
-
 use Collection\Traits\ArrayableTrait;
 use Collection\Traits\ArrayAccessTrait;
 use Collection\Traits\CountableTrait;
@@ -22,7 +20,7 @@ class Collection implements Arrayable, ArrayAccess, Countable, IteratorAggregate
     protected $items;
 
     /**
-     * Collection\Collection constructor; runs on object creation
+     * Collection\Collection constructor; runs on object creation.
      *
      * @param array $items Array of items
      */
@@ -32,20 +30,20 @@ class Collection implements Arrayable, ArrayAccess, Countable, IteratorAggregate
     }
 
     /**
-     * Static make function; alias for __construct
+     * Static make function; alias for __construct.
      *
      * @param array $items Array of items
      *
      * @return Collection
      */
-    static function make(array $items = [])
+    public static function make(array $items = [])
     {
         return new static($items);
     }
 
     /**
      * Iterate over each item in the collection and perform an action via a
-     * callback function
+     * callback function.
      *
      * @param Closure $callback Callback function to run against each element in
      *                          the collection
@@ -63,7 +61,7 @@ class Collection implements Arrayable, ArrayAccess, Countable, IteratorAggregate
     }
 
     /**
-     * Transform each item in the collection via a callback function
+     * Transform each item in the collection via a callback function.
      *
      * @param Closure $callback Callback function to run against each element in
      *                          the collection
@@ -77,7 +75,7 @@ class Collection implements Arrayable, ArrayAccess, Countable, IteratorAggregate
 
     /**
      * Transform each item in the colleciton via the callback function then
-     * flatten it when done
+     * flatten it when done.
      *
      * @param Closure $callback Callback function to run against each element in
      *                          the collection
@@ -91,7 +89,7 @@ class Collection implements Arrayable, ArrayAccess, Countable, IteratorAggregate
 
     /**
      * Filter the items in a collection returning only the items where the
-     * callback function returns true
+     * callback function returns true.
      *
      * @param Closure $callback Callback function to run against each element in
      *                          the collection
@@ -105,7 +103,7 @@ class Collection implements Arrayable, ArrayAccess, Countable, IteratorAggregate
 
     /**
      * Filter the items in a collection returning only the items where the
-     * callback function returns `false` (opposite of the filter method)
+     * callback function returns `false` (opposite of the filter method).
      *
      * @param Closure $callback Callback function to run against each element in
      *                          the collection
@@ -115,12 +113,13 @@ class Collection implements Arrayable, ArrayAccess, Countable, IteratorAggregate
     public function reject(Closure $callback)
     {
         return $this->filter(function ($value, $key) use ($callback) {
-            return ! $callback($value, $key); });
+            return ! $callback($value, $key);
+        });
     }
 
     /**
      * Iteratively reduce the collection to a single value using a callback
-     * function
+     * function.
      *
      * @param Closure $callback Callback function to run against each element in
      *                          the collection
@@ -134,7 +133,7 @@ class Collection implements Arrayable, ArrayAccess, Countable, IteratorAggregate
 
     /**
      * Rotate a multidimensional array, turning the rows into columns and the
-     * columns into rows
+     * columns into rows.
      *
      * @return Collection
      */
@@ -148,7 +147,7 @@ class Collection implements Arrayable, ArrayAccess, Countable, IteratorAggregate
     }
 
     /**
-     * Append one or more items to the end of the collection
+     * Append one or more items to the end of the collection.
      *
      * @param mixed $items One or more items to append
      *
@@ -162,7 +161,7 @@ class Collection implements Arrayable, ArrayAccess, Countable, IteratorAggregate
     }
 
     /**
-     * Prepend one or more items to the beginning of the collection
+     * Prepend one or more items to the beginning of the collection.
      *
      * NOTE: Items are prepended in the order they are passed so they stay in
      * the same order
@@ -179,7 +178,7 @@ class Collection implements Arrayable, ArrayAccess, Countable, IteratorAggregate
     }
 
     /**
-     * Calculate the sum of the items in the collection
+     * Calculate the sum of the items in the collection.
      *
      * @return int|float Sum of items in the collection; 0 if collection is empty
      */
@@ -189,7 +188,7 @@ class Collection implements Arrayable, ArrayAccess, Countable, IteratorAggregate
     }
 
     /**
-     * Shuffles (randomizes) the order of the items in the collection
+     * Shuffles (randomizes) the order of the items in the collection.
      *
      * @return Collection
      */
@@ -203,7 +202,7 @@ class Collection implements Arrayable, ArrayAccess, Countable, IteratorAggregate
     }
 
     /**
-     * Return a random item from the collection
+     * Return a random item from the collection.
      *
      * @return mixed A random item
      */

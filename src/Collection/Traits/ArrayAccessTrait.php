@@ -5,9 +5,9 @@ namespace Collection\Traits;
 trait ArrayAccessTrait
 {
     /**
-     * Whether an offset exists
+     * Whether an offset exists.
      *
-     * @param mixed $offset An offset to check for.
+     * @param mixed $offset an offset to check for
      *
      * @return bool
      */
@@ -17,9 +17,9 @@ trait ArrayAccessTrait
     }
 
     /**
-     * Offset to retrieve
+     * Offset to retrieve.
      *
-     * @param mixed $offset The offset to retrieve.
+     * @param mixed $offset the offset to retrieve
      *
      * @return mixed
      */
@@ -29,12 +29,10 @@ trait ArrayAccessTrait
     }
 
     /**
-     * Assign a value to the specified offset
+     * Assign a value to the specified offset.
      *
-     * @param mixed $offset The offset to assign the value to.
-     * @param mixed $value The value to set.
-     *
-     * @return void
+     * @param mixed $offset the offset to assign the value to
+     * @param mixed $value  the value to set
      */
     public function offsetSet($offset, $value)
     {
@@ -46,11 +44,9 @@ trait ArrayAccessTrait
     }
 
     /**
-     * Unset an offset
+     * Unset an offset.
      *
-     * @param mixed $offset The offset to unset.
-     *
-     * @return void
+     * @param mixed $offset the offset to unset
      */
     public function offsetUnset($offset)
     {

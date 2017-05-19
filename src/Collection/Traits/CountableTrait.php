@@ -5,9 +5,9 @@ namespace Collection\Traits;
 trait CountableTrait
 {
     /**
-     * Count elements of an object
+     * Count elements of an object.
      *
-     * @return integer
+     * @return int
      */
     public function count()
     {

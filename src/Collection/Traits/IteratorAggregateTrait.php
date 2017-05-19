@@ -5,7 +5,7 @@ namespace Collection\Traits;
 trait IteratorAggregateTrait
 {
     /**
-     * Retrieve the items as an ArrayIterator
+     * Retrieve the items as an ArrayIterator.
      *
      * @return ArrayIterator
      */
