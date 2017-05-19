@@ -6,6 +6,7 @@ Collection
 [![Author](https://img.shields.io/badge/author-Chris%20Kankiewicz-blue.svg)](https://www.ChrisKankiewicz.com)
 [![License](https://img.shields.io/packagist/l/PHLAK/Collection.svg)](https://packagist.org/packages/PHLAK/Collection)
 [![Build Status](https://img.shields.io/travis/PHLAK/Collection.svg)](https://travis-ci.org/PHLAK/Collection)
+[![StyleCI](https://styleci.io/repos/91770327/shield?branch=master&style=flat)](https://styleci.io/repos/91770327)
 
 Lightweight collection library -- by, [Chris Kankiewicz](https://www.ChrisKankiewicz.com)
 
