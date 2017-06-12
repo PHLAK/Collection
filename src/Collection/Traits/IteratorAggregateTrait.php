@@ -2,6 +2,8 @@
 
 namespace Collection\Traits;
 
+use ArrayIterator;
+
 trait IteratorAggregateTrait
 {
     /**
