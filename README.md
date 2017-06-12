@@ -91,7 +91,7 @@ $collection->sum(Closure $function, $initial);
 Changelog
 ---------
 
-A list of changes can be found on the [GitHub Releases](https://github.com/PHLAK/Collection\Collection/releases) page.
+A list of changes can be found on the [GitHub Releases](https://github.com/PHLAK/Collection/releases) page.
 
 Troubleshooting
 ---------------
