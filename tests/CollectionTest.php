@@ -1,6 +1,7 @@
 <?php
 
 use Collection\Collection;
+use Collection\Interfaces\Arrayable;
 
 class CollectionTest extends PHPUnit_Framework_TestCase
 {
@@ -9,7 +10,7 @@ class CollectionTest extends PHPUnit_Framework_TestCase
 
     public function setUp()
     {
-        $this->collection = Collection::make(['foo', 'bar',  'baz']);
+        $this->collection = Collection::make(['foo', 'bar', 'baz']);
     }
 
     // TODO: test_it_is_flattenable
@@ -17,22 +18,17 @@ class CollectionTest extends PHPUnit_Framework_TestCase
 
     public function test_it_can_be_initialize_via_the_constructor()
     {
-        $collection = new Collection(['foo', 'bar', 'baz']);
-
-        // TODO: Come up witha better test for this
-        $this->assertInstanceOf(Collection::class, $collection);
+        $this->assertInstanceOf(Collection::class, new Collection(['foo', 'bar', 'baz']));
     }
 
     public function test_it_can_be_initialize_via_the_make_method()
     {
-        $collection = Collection::make(['foo', 'bar', 'baz']);
-
-        // TODO: Come up witha better test for this
-        $this->assertInstanceOf(Collection::class, $collection);
+        $this->assertInstanceOf(Collection::class, Collection::make(['foo', 'bar', 'baz']));
     }
 
     public function test_it_implements_the_necessary_interfaces()
     {
+        $this->assertInstanceOf(Arrayable::class, $this->collection);
         $this->assertInstanceOf(ArrayAccess::class, $this->collection);
         $this->assertInstanceOf(Countable::class, $this->collection);
         $this->assertInstanceOf(IteratorAggregate::class, $this->collection);
@@ -43,11 +39,6 @@ class CollectionTest extends PHPUnit_Framework_TestCase
         $this->assertEquals('foo', $this->collection[0]);
         $this->assertEquals('bar', $this->collection[1]);
         $this->assertEquals('baz', $this->collection[2]);
-    }
-
-    public function test_it_can_be_returned_as_an_array()
-    {
-        $this->assertEquals(['foo', 'bar',  'baz'], $this->collection->all());
     }
 
     public function test_it_is_eachable()
@@ -168,25 +159,6 @@ class CollectionTest extends PHPUnit_Framework_TestCase
         $randomItem = $this->collection->random();
 
         $this->assertContains($randomItem, $this->collection->all());
-    }
-
-    public function test_it_is_countable()
-    {
-        $this->assertEquals(3, count($this->collection));
-    }
-
-    public function test_it_can_get_the_keys()
-    {
-        $collection = Collection::make(['foo' => 'FOO', 'bar' => 'BAR']);
-
-        $this->assertEquals(['foo', 'bar'], $collection->keys());
-    }
-
-    public function test_it_can_get_the_values()
-    {
-        $collection = Collection::make(['foo' => 'FOO', 'bar' => 'BAR']);
-
-        $this->assertEquals(['FOO', 'BAR'], $collection->values());
     }
 
     public function test_it_is_summable()
