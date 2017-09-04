@@ -62,6 +62,24 @@ class Collection implements Arrayable, ArrayAccess, Countable, IteratorAggregate
     }
 
     /**
+     * Collapse a collection of arrays into a single, flat collection.
+     *
+     * @return Collection
+     */
+    public function collapse()
+    {
+        $flattenedArray = [];
+
+        foreach ($this->items as $item) {
+            if (is_array($item)) {
+                $flattenedArray = array_merge($flattenedArray, $item);
+            }
+        }
+
+        return new static($flattenedArray);
+    }
+
+    /**
      * Transform each item in the collection via a callback function.
      *
      * @param Closure $callback Callback function to run against each element in
@@ -85,7 +103,7 @@ class Collection implements Arrayable, ArrayAccess, Countable, IteratorAggregate
      */
     public function flatmap(Closure $callback)
     {
-        return new static($this->map($callback)->collapse());
+        return $this->map($callback)->collapse();
     }
 
     /**

@@ -61,6 +61,27 @@ class CollectionTest extends PHPUnit_Framework_TestCase
         ]), $formattedPrices);
     }
 
+    public function test_it_is_flatmappable()
+    {
+        $user = Collection::make([
+            ['first_name' => 'john'],
+            ['last_name' => 'pinkerton'],
+            ['city' => 'phoenix'],
+            ['state' => 'arizona']
+        ]);
+
+        $formattedUser = $user->flatmap(function ($values) {
+            return array_map('ucfirst', $values);
+        });
+
+        $this->assertEquals(Collection::make([
+            'first_name' => 'John',
+            'last_name' => 'Pinkerton',
+            'city' => 'Phoenix',
+            'state' => 'Arizona'
+        ]), $formattedUser);
+    }
+
     public function test_it_is_filterable()
     {
         $menu = Collection::make([
@@ -97,6 +118,15 @@ class CollectionTest extends PHPUnit_Framework_TestCase
             'desk' => ['quantity' => 2],
             'chair' => ['quantity' => 4]
         ], $inStockProducts->all());
+    }
+
+    public function test_it_is_collapsable()
+    {
+        $collection = Collection::make([[1, 2, 3], [4, 5, 6], [7, 8, 9]]);
+
+        $collapsed = $collection->collapse();
+
+        $this->assertEquals(Collection::make([1, 2, 3, 4, 5, 6, 7, 8, 9]), $collapsed);
     }
 
     public function test_it_is_reducible()
