@@ -11,10 +11,11 @@ use Collection\Traits\ArrayableTrait;
 use Collection\Traits\ArrayAccessTrait;
 use Collection\Traits\CountableTrait;
 use Collection\Traits\IteratorAggregateTrait;
+use Collection\Traits\MathableTrait;
 
 class Collection implements Arrayable, ArrayAccess, Countable, IteratorAggregate
 {
-    use ArrayableTrait, ArrayAccessTrait, CountableTrait, IteratorAggregateTrait;
+    use ArrayableTrait, ArrayAccessTrait, CountableTrait, IteratorAggregateTrait, MathableTrait;
 
     /** @var array Array of items in this Collection */
     protected $items;
@@ -175,16 +176,6 @@ class Collection implements Arrayable, ArrayAccess, Countable, IteratorAggregate
         array_unshift($this->items, ...$items);
 
         return $this;
-    }
-
-    /**
-     * Calculate the sum of the items in the collection.
-     *
-     * @return int|float Sum of items in the collection; 0 if collection is empty
-     */
-    public function sum()
-    {
-        return array_sum($this->items);
     }
 
     /**

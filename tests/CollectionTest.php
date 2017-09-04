@@ -161,13 +161,6 @@ class CollectionTest extends PHPUnit_Framework_TestCase
         $this->assertContains($randomItem, $this->collection->all());
     }
 
-    public function test_it_is_summable()
-    {
-        $collection = Collection::make([1, 3, 3, 7]);
-
-        $this->assertEquals(14, $collection->sum());
-    }
-
     public function test_it_throws_an_exception_when_summing_non_integers()
     {
         var_dump($this->collection->sum());
