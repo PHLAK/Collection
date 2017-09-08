@@ -1,7 +1,7 @@
 <?php
 
-use Collection\Collection;
-use Collection\Interfaces\Arrayable;
+use PHLAK\Collection\Collection;
+use PHLAK\Collection\Interfaces\Arrayable;
 
 class CollectionTest extends PHPUnit_Framework_TestCase
 {
@@ -12,9 +12,6 @@ class CollectionTest extends PHPUnit_Framework_TestCase
     {
         $this->collection = Collection::make(['foo', 'bar', 'baz']);
     }
-
-    // TODO: test_it_is_flattenable
-    // TODO: test_it_is_flatmapable
 
     public function test_it_can_be_initialize_via_the_constructor()
     {

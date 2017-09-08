@@ -1,6 +1,6 @@
 <?php
 
-use Collection\Collection;
+use PHLAK\Collection\Collection;
 
 class CountableTest extends PHPUnit_Framework_TestCase
 {

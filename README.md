@@ -33,17 +33,17 @@ Initializing the Client
 First, import Collection:
 
 ```php
-use Collection/Collection;
+use PHLAK\Collection;
 ```
 
 Then pass an array of items to the `Collection` class or the static `make` method:
 
 ```php
-$collection = new Collection(['foo', 'bar', 'baz']);
+$collection = new Collection\Collection(['foo', 'bar', 'baz']);
 
 // or
 
-$collection = Collection::make(['foo', 'bar', 'baz']);
+$collection = Collection\Collection::make(['foo', 'bar', 'baz']);
 ```
 
 Usage

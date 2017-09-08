@@ -1,17 +1,17 @@
 <?php
 
-namespace Collection;
+namespace PHLAK\Collection;
 
 use ArrayAccess;
 use Closure;
 use Countable;
 use IteratorAggregate;
-use Collection\Interfaces\Arrayable;
-use Collection\Traits\ArrayableTrait;
-use Collection\Traits\ArrayAccessTrait;
-use Collection\Traits\CountableTrait;
-use Collection\Traits\IteratorAggregateTrait;
-use Collection\Traits\MathableTrait;
+use PHLAK\Collection\Interfaces\Arrayable;
+use PHLAK\Collection\Traits\ArrayableTrait;
+use PHLAK\Collection\Traits\ArrayAccessTrait;
+use PHLAK\Collection\Traits\CountableTrait;
+use PHLAK\Collection\Traits\IteratorAggregateTrait;
+use PHLAK\Collection\Traits\MathableTrait;
 
 class Collection implements Arrayable, ArrayAccess, Countable, IteratorAggregate
 {

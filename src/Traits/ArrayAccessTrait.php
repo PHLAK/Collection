@@ -1,6 +1,6 @@
 <?php
 
-namespace Collection\Traits;
+namespace PHLAK\Collection\Traits;
 
 trait ArrayAccessTrait
 {
