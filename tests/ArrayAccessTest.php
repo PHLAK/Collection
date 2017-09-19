@@ -34,4 +34,11 @@ class ArrayAccessTest extends PHPUnit_Framework_TestCase
         $this->assertTrue(isset($this->collection[0]));
         $this->assertFalse(isset($this->collection[5]));
     }
+
+    public function test_it_can_unset_an_array_element()
+    {
+        unset($this->collection[1]);
+
+        $this->assertEquals([0 => 'foo', 2 => 'baz'], $this->collection->all());
+    }
 }
