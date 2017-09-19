@@ -160,7 +160,7 @@ class Collection implements Arrayable, ArrayAccess, Countable, IteratorAggregate
     {
         $items = array_map(function (...$items) {
             return $items;
-        }, ...$this->values()); // TODO: Implement values() method
+        }, ...$this->values());
 
         return new static($items);
     }
