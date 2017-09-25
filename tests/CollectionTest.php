@@ -170,6 +170,20 @@ class CollectionTest extends PHPUnit_Framework_TestCase
         $this->assertEquals([1, 3, 3, 7], $collection->prepend(1, 3)->all());
     }
 
+    public function test_it_can_be_padded_to_a_specific_length()
+    {
+        $this->assertEquals(Collection::make([
+            'foo', 'bar', 'baz', 'qux', 'qux'
+        ]), $this->collection->pad(5, 'qux'));
+    }
+
+    public function test_it_is_reversable()
+    {
+        $this->assertEquals(Collection::make([
+            'baz', 'bar', 'foo'
+        ]), $this->collection->reverse());
+    }
+
     public function test_it_is_shuffleable()
     {
         $shuffled = $this->collection->shuffle();

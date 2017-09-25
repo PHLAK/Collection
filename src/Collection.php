@@ -197,6 +197,29 @@ class Collection implements Arrayable, ArrayAccess, Countable, IteratorAggregate
     }
 
     /**
+     * Pad the collection with a value to the specified length.
+     *
+     * @param int $length New length of the array
+     * @param mixed $value Value used to pad the array
+     *
+     * @return Collection
+     */
+    public function pad($length, $value)
+    {
+        return new static(array_pad($this->items, $length, $value));
+    }
+
+    /**
+     * Return the collection with items in reverse order.
+     *
+     * @return Collection
+     */
+    public function reverse()
+    {
+        return new static(array_reverse($this->items));
+    }
+
+    /**
      * Shuffles (randomizes) the order of the items in the collection.
      *
      * @return Collection
