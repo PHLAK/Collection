@@ -1,9 +1,12 @@
 <?php
 
+namespace PHLAK\Collection\Tests;
+
 use PHLAK\Collection\Collection;
 use PHLAK\Collection\Interfaces\Arrayable;
+use PHPUnit\Framework\TestCase;
 
-class CollectionTest extends PHPUnit_Framework_TestCase
+class CollectionTest extends TestCase
 {
     /** @var Collection Instance of Collection */
     protected $collection;
@@ -26,9 +29,9 @@ class CollectionTest extends PHPUnit_Framework_TestCase
     public function test_it_implements_the_necessary_interfaces()
     {
         $this->assertInstanceOf(Arrayable::class, $this->collection);
-        $this->assertInstanceOf(ArrayAccess::class, $this->collection);
-        $this->assertInstanceOf(Countable::class, $this->collection);
-        $this->assertInstanceOf(IteratorAggregate::class, $this->collection);
+        $this->assertInstanceOf(\ArrayAccess::class, $this->collection);
+        $this->assertInstanceOf(\Countable::class, $this->collection);
+        $this->assertInstanceOf(\IteratorAggregate::class, $this->collection);
     }
 
     public function test_it_can_retreive_items_using_array_notation()
@@ -204,6 +207,6 @@ class CollectionTest extends PHPUnit_Framework_TestCase
 
     public function test_it_throws_an_exception_when_summing_non_integers()
     {
-        var_dump($this->collection->sum());
+        $this->assertSame(0, $this->collection->sum());
     }
 }

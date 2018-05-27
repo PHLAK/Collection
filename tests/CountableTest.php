@@ -1,8 +1,11 @@
 <?php
 
-use PHLAK\Collection\Collection;
+namespace PHLAK\Collection\Tests;
 
-class CountableTest extends PHPUnit_Framework_TestCase
+use PHLAK\Collection\Collection;
+use PHPUnit\Framework\TestCase;
+
+class CountableTest extends TestCase
 {
     public function test_it_is_countable()
     {
