@@ -1,8 +1,11 @@
 <?php
 
-use PHLAK\Collection\Collection;
+namespace PHPUnit\Framework\TestCase;
 
-class MathableTest extends PHPUnit_Framework_TestCase
+use PHLAK\Collection\Collection;
+use PHPUnit\Framework\TestCase;
+
+class MathableTest extends TestCase
 {
     public function test_it_can_sum_the_array_values()
     {

@@ -1,8 +1,11 @@
 <?php
 
-use PHLAK\Collection\Collection;
+namespace PHLAK\Collection\Tests;
 
-class ArrayAccessTest extends PHPUnit_Framework_TestCase
+use PHLAK\Collection\Collection;
+use PHPUnit\Framework\TestCase;
+
+class ArrayAccessTest extends TestCase
 {
     /** @var Collection Instance of Collection */
     protected $collection;
