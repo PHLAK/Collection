@@ -1,13 +1,14 @@
 <?php
 
 use PHLAK\Collection\Collection;
+use PHPUnit\Framework\TestCase;
 
-class ArrayableTest extends PHPUnit_Framework_TestCase
+class ArrayableTest extends TestCase
 {
     /** @var Collection Instance of Collection */
     protected $collection;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->collection = Collection::make([
             'foo' => 'FOO',

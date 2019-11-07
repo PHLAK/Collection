@@ -1,8 +1,9 @@
 <?php
 
 use PHLAK\Collection\Collection;
+use PHPUnit\Framework\TestCase;
 
-class CountableTest extends PHPUnit_Framework_TestCase
+class CountableTest extends TestCase
 {
     public function test_it_is_countable()
     {

@@ -10,11 +10,6 @@ Collection
 
 Lightweight collection library -- by, [Chris Kankiewicz](https://www.ChrisKankiewicz.com)
 
-Introduction
-------------
-
-...
-
 Requirements
 ------------
 

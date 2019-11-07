@@ -2,13 +2,14 @@
 
 use PHLAK\Collection\Collection;
 use PHLAK\Collection\Interfaces\Arrayable;
+use PHPUnit\Framework\TestCase;
 
-class CollectionTest extends PHPUnit_Framework_TestCase
+class CollectionTest extends TestCase
 {
     /** @var Collection Instance of Collection */
     protected $collection;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->collection = Collection::make(['foo', 'bar', 'baz']);
     }
@@ -108,7 +109,7 @@ class CollectionTest extends PHPUnit_Framework_TestCase
         ]);
 
         $inStockProducts = $products->reject(function ($item) {
-            return $item['quantity'] == 0;
+            return 0 == $item['quantity'];
         });
 
         $this->assertEquals([
@@ -200,10 +201,5 @@ class CollectionTest extends PHPUnit_Framework_TestCase
         $randomItem = $this->collection->random();
 
         $this->assertContains($randomItem, $this->collection->all());
-    }
-
-    public function test_it_throws_an_exception_when_summing_non_integers()
-    {
-        var_dump($this->collection->sum());
     }
 }

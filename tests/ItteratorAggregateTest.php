@@ -1,8 +1,9 @@
 <?php
 
 use PHLAK\Collection\Collection;
+use PHPUnit\Framework\TestCase;
 
-class IteratorAggregateTest extends PHPUnit_Framework_TestCase
+class IteratorAggregateTest extends TestCase
 {
     public function test_it_is_foreachable()
     {
